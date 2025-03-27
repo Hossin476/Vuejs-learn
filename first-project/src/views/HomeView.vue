@@ -112,12 +112,12 @@ export default defineComponent({
     }
 
     const removeTask = (taskId: number) => {
-      tasks.value = tasks.value.filter((task) => task.id !== taskId)
+      tasks.value = tasks.value.filter((task: { id: number; title: string; completed: boolean }) => task.id !== taskId)
       saveTasks()
     }
 
     const toggleTask = (taskId: number) => {
-      const task = tasks.value.find((task) => task.id === taskId)
+      const task = tasks.value.find((task: { id: number; title: string; completed: boolean }) => task.id === taskId)
       if (task) {
         task.completed = !task.completed
         saveTasks()
@@ -129,25 +129,25 @@ export default defineComponent({
     }
 
     const clearCompleted = () => {
-      tasks.value = tasks.value.filter(task => !task.completed)
+      tasks.value = tasks.value.filter((task: { id: number; title: string; completed: boolean }) => !task.completed)
       saveTasks()
     }
 
     const filteredTasks = computed(() => {
       if (filter.value === 'active') {
-        return tasks.value.filter((task) => !task.completed)
+        return tasks.value.filter((task: { id: number; title: string; completed: boolean }) => !task.completed)
       } else if (filter.value === 'completed') {
-        return tasks.value.filter((task) => task.completed)
+        return tasks.value.filter((task: { id: number; title: string; completed: boolean }) => task.completed)
       }
       return tasks.value
     })
 
     const activeTasksCount = computed(() => {
-      return tasks.value.filter(task => !task.completed).length
+      return tasks.value.filter((task: { id: number; title: string; completed: boolean }) => !task.completed).length
     })
 
     const completedTasksCount = computed(() => {
-      return tasks.value.filter(task => task.completed).length
+      return tasks.value.filter((task: { id: number; title: string; completed: boolean }) => task.completed).length
     })
 
     return {
