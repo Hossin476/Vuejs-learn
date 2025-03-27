@@ -60,7 +60,7 @@
               <p class="font-medium">No tasks found</p>
               <p class="text-sm">{{ filter === 'all' ? 'Add a new task to get started' : 'Change filters to see more tasks' }}</p>
             </div>
-            <TodoItem v-for="task in filteredTasks" :key="task.id" :title="task.title" :completed="task.completed"
+            <TodoItem v-for="task in filteredTasks" :key="task.id" :id="task.id" :title="task.title" :completed="task.completed"
               @toggle="toggleTask(task.id)" @remove="removeTask(task.id)" />
           </TransitionGroup>
         </div>
@@ -85,6 +85,7 @@
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue'
 import TodoItem from '../components/TodoItem.vue'
+
 
 export default defineComponent({
   components: {

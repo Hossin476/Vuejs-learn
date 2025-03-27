@@ -6,8 +6,8 @@
 
       <div class="relative flex-shrink-0">
         <input type="checkbox" :checked="completed" @change="toggleCompletion" class="sr-only peer"
-          :id="`task-${_uid}`" />
-        <label :for="`task-${_uid}`"
+          :id="`task-${id}`" />
+        <label :for="`task-${id}`"
           class="flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-white ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 peer-checked:border-violet-500 peer-checked:bg-violet-500 peer-checked:text-white hover:border-violet-400">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 text-white"
@@ -39,11 +39,15 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import type {PropType} from 'vue'
+import type { PropType } from 'vue'
 
 export default defineComponent({
   name: 'TodoItem',
   props: {
+    id: {
+      type: Number as PropType<number>,
+      required: true,
+    },
     title: {
       type: String as PropType<string>,
       required: true,
