@@ -11,7 +11,7 @@
           <input v-model="newTask" @keyup.enter="addTask" placeholder="What needs to be done?"
             class="flex-1 p-3 border-2 border-r-0 border-gray-200 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all" />
           <button @click="addTask"
-            class="px-4 bg-violet-600 text-white rounded-r-lg hover:bg-violet-700 transition-colors duration-200 flex items-center justify-center">
+            class="px-4 bg-violet-600 cursor-pointer text-white rounded-r-lg hover:bg-violet-700 transition-colors duration-200 flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -22,7 +22,7 @@
 
         <div class="flex justify-between mb-6">
           <button @click="filterTasks('all')" :class="[
-            'px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm',
+            'px-4 py-2 rounded-lg cursor-pointer transition-all duration-200 font-medium text-sm',
             filter === 'all'
               ? 'bg-violet-600 text-white shadow-md'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -30,7 +30,7 @@
             All
           </button>
           <button @click="filterTasks('active')" :class="[
-            'px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm',
+            'px-4 py-2 rounded-lg transition-all cursor-pointer duration-200 font-medium text-sm',
             filter === 'active'
               ? 'bg-violet-600 text-white shadow-md'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -38,7 +38,7 @@
             Active
           </button>
           <button @click="filterTasks('completed')" :class="[
-            'px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm',
+            'px-4 py-2 rounded-lg transition-all duration-200 font-medium cursor-pointer text-sm',
             filter === 'completed'
               ? 'bg-violet-600 text-white shadow-md'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -69,7 +69,7 @@
           class="mt-6 pt-4 border-t border-gray-100 flex justify-between text-sm text-gray-500">
           <span>{{ activeTasksCount }} items left</span>
           <button v-if="completedTasksCount > 0" @click="clearCompleted"
-            class="text-violet-600 hover:text-violet-800 transition-colors">
+            class="text-violet-600 hover:text-violet-800 transition-colors cursor-pointer">
             Clear completed
           </button>
         </div>

@@ -23,7 +23,7 @@
       </span>
 
       <button @click="removeItem"
-        class="ml-2 flex-shrink-0 rounded-full p-1.5 text-gray-400 opacity-0 transition-opacity duration-200 hover:bg-red-50 hover:text-red-500 group-hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+        class="ml-2 flex-shrink-0 cursor-pointer rounded-full p-1.5 text-gray-400 opacity-0 transition-opacity duration-200 hover:bg-red-50 hover:text-red-500 group-hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
         aria-label="Delete task">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
